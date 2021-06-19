@@ -794,14 +794,7 @@
                         </div>
 
                         <div style="margin-top: 20px;" class="row">
-                            <div class="col-12 col-md-4">
-                                <div class="form-check">
-                                    <input style="transform: scale(2);" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label style="font-size: 25px;" class="form-check-label" for="defaultCheck1">
-                                        Cerere finante+declaratie
-                                    </label>
-                                </div>
-                            </div>
+                            
                             <div class="col-12 col-md-3">
                                 <button style="width:100%;font-size:20px;" type="submit" class="btn btn-primary">Trimite</button>
                             </div>

@@ -4,7 +4,7 @@
       <choser :rooms="chatRooms" :currentRoom="currentRoom" v-on:roomchanged="setRoom($event)"/>  
     </div>
     <div class="col-6">
-      <message-container :cuser="user" :messages="messages" />
+      <message-container style="height:300px; overflow:auto;" :cuser="user" :messages="messages" />
       <input-message :room="currentRoom" v-on:messagesent="getMessages()" />
     </div>
   </div>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div v-if="self == true">
+    <div v-if="this.self == true">
       <div style="margin: 5px; text-align: left">
         <div
           style="
             width: 30%;
             text-align: center;
-            background-color: #c4c4c4;
+            background-color: #dbdbdb;
             border-radius: 20px;
             color:black;
             font-weight:300;
@@ -25,8 +25,11 @@
           style="
             width: 30%;
             text-align: center;
-            background-color: yellow;
+            background-color: #3D566E;
+            color:white;
             border-radius: 20px;
+            margin-left: auto; 
+margin-right: 0;
           "
         >
           {{ message.message }}

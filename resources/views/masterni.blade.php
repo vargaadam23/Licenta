@@ -29,11 +29,11 @@
 			<i class="fa fa-bars"></i>
 			<span class="sr-only">Toggle navigation</span>
 			</button>
-			<a href="/home" class="navbar-brand brand"> Birouauto </a>
+			<a href="/" class="navbar-brand brand"> Birouauto </a>
 		</div>
 		<div id="navbar-collapse-02" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="propClone"><a href="/home">Home</a></li>
+				<li class="propClone"><a href="/">Home</a></li>
 				<li class="propClone"><a href="/documente">Documente</a></li>
 				<li class="propClone"><a href="product.html">Informatii</a></li>
 				<li class="propClone"><a href="checkout.html">Asigurare</a></li>
@@ -105,6 +105,6 @@ jQuery(document).ready(function ($) {
 	);
 });
 </script>
-	
+<script src="{{ asset('js/app.js') }}" ></script>	
 </body>
 </html>

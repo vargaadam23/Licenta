@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="self == true">
-      <div style="margin: 5px; text-align: left">
+    <div v-if="this.self == true">
+      <div class="text-align-left" style="margin: 5px; ">
         <div
           style="
             width: 30%;
@@ -20,13 +20,16 @@
     </div>
 
     <div v-else>
-      <div style="margin: 5px 0; text-align: right">
+      <div style="margin: 5px 0;">
         <div
           style="
             width: 30%;
             text-align: center;
             background-color: yellow;
             border-radius: 20px;
+            margin-left: auto; 
+margin-right: 0;
+            
           "
         >
           {{ message.message }}

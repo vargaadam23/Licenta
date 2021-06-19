@@ -37,18 +37,18 @@
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
-                <h2>Inmatriculare</h2>
+                <h2>Înmatriculare</h2>
                 <div class="row">
                     <form style="width: 100%;padding:10px;" action="/inmatricularesender" method="POST">
                         @csrf
-                        <label style="font-size: 20px;color:black;" for="persoana1row">Detalii persoana</label>
+                        <label style="font-size: 20px;color:black;" for="persoana1row">Detalii persoană</label>
 
                         <div id="persoana1row" class="form-row">
                             <div class="col-9 col-md-3 form-group">
-                                <label for="persoana1">Alegeti tipul de persoana</label>
+                                <label for="persoana1">Alegeți tipul de persoană</label>
                                 <select style="width: 70%;" id="persoana1" class="form-control" name="persoana1">
-                                    <option selected="selected" value="pf">Persoana fizica</option>
-                                    <option value="pj">Persoana juridica</option>
+                                    <option selected="selected" value="pf">Persoana fizică</option>
+                                    <option value="pj">Persoana juridică</option>
                                 </select>
                             </div>
 
@@ -63,7 +63,7 @@
                                         <input class="form-control" id="prenume1" name="prenume1" type="text">
                                     </div>
                                     <div class="col-5 col-md-3 form-group">
-                                        <label for="serie1">Serie si numar CI</label>
+                                        <label for="serie1">Serie si număr CI</label>
                                         <input class="form-control" id="serie1" name="serie1" type="text">
                                     </div>
                                     <div class="col-7 col-md-3 form-group">
@@ -121,7 +121,7 @@
                                 <input class="form-control" id="ap1" name="ap1" type="text">
                             </div>
                             <div class="col-6 col-md-2  form-group">
-                                <label for="jud1">Judet</label>
+                                <label for="jud1">Județ</label>
                                 <input class="form-control" id="jud1" name="jud1" type="text">
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                 <input class="form-control" id="iden" name="iden" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
-                                <label for="om">Numar de omologare</label>
+                                <label for="om">Număr de omologare</label>
                                 <input class="form-control" id="om" name="om" type="text">
                             </div>
                             <div class="col-6 col-md-1 form-group">
@@ -174,7 +174,7 @@
                                 <input class="form-control" id="col" name="col" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
-                                <label for="civ">Seria si nr CI vehiculului</label>
+                                <label for="civ">Seria și nr CI vehiculului</label>
                                 <input class="form-control" id="civ" name="civ" type="text">
                             </div>
                         </div>

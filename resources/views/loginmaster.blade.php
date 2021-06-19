@@ -29,7 +29,7 @@
 			<i class="fa fa-bars"></i>
 			<span class="sr-only">Toggle navigation</span>
 			</button>
-			<a href="/home" class="navbar-brand brand"> Birouauto </a>
+			<a href="/" class="navbar-brand brand"> Birouauto </a>
 		</div>
 		<div id="navbar-collapse-02" class="collapse navbar-collapse">
 			

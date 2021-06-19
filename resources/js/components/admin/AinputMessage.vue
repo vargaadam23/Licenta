@@ -1,13 +1,14 @@
 <template>
     <div class="relative h-10 m-1">
-        <div style="border-top:1px solid #e6e6e6;" class="grid grid-cols-6">
+        <div style="border-top:1px solid #e6e6e6;" class="row">
             
-            <input type="text"
+            <input  type="text"
             v-model="message"
             @keyup.enter="sendMessages()"
-            placeholder="Say smth"
-            class="col-span-5 outline-none p-1"/>
-            <button @click="sendMessages()" class="place-self-end bg-gray-500 hover:bg-blue-700 p-1 mt-1 rounded text-white">
+            placeholder="Introduceti mesajul"
+            class="form-control col-6"/>
+            <div class="col-2"></div>
+            <button @click="sendMessages()" class="btn btn-secondary col-4">
 Send
             </button>
         </div>

@@ -1,9 +1,9 @@
 <template>
 <div>
-    <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-          <message-container :cuser="user" :messages="messages"/>
+    <div >
+      <div >
+        <div >
+          <message-container style="height:450px; overflow:auto;" :cuser="user" :messages="messages"/>
           <input-message v-on:messagesent="getMessages()"/>
          
         </div>

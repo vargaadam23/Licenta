@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list-group">
-      <li v-for="(room,index) in rooms" :key="index" :class="{active: selected==room}" v-on:click="selected=room.room;$emit('roomchanged',selected);" class="list-group-item">{{room.name}}</li>
+      <li v-for="(room,index) in rooms" :key="index" v-on:click="selected=room.room;$emit('roomchanged',selected);" class="list-group-item">{{room.name}}</li>
     </ul>
   </div>
 </template>

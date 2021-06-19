@@ -1991,6 +1991,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['room'],
   data: function data() {
@@ -2051,6 +2052,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2072,6 +2076,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -2243,27 +2250,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['room'],
+  props: ["room"],
   data: function data() {
     return {
-      message: ''
+      message: ""
     };
   },
   methods: {
     sendMessages: function sendMessages() {
       var _this = this;
 
-      if (this.messages == ' ') {
+      if (this.messages == " ") {
         return;
       } else {
-        axios.post('/chat/message', {
+        axios.post("/chat/message", {
           message: this.message
         }).then(function (response) {
           if (response.status == 201) {
             _this.message = "";
 
-            _this.$emit('messagesent');
+            _this.$emit("messagesent");
           }
         })["catch"](function (error) {
           console.log(error);
@@ -2324,6 +2335,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -44762,6 +44776,7 @@ var render = function() {
       { staticClass: "col-6" },
       [
         _c("message-container", {
+          staticStyle: { height: "300px", overflow: "auto" },
           attrs: { cuser: _vm.user, messages: _vm.messages }
         }),
         _vm._v(" "),
@@ -44805,7 +44820,7 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "grid grid-cols-6",
+        staticClass: "row",
         staticStyle: { "border-top": "1px solid #e6e6e6" }
       },
       [
@@ -44818,8 +44833,8 @@ var render = function() {
               expression: "message"
             }
           ],
-          staticClass: "col-span-5 outline-none p-1",
-          attrs: { type: "text", placeholder: "Say smth" },
+          staticClass: "form-control col-6",
+          attrs: { type: "text", placeholder: "Introduceti mesajul" },
           domProps: { value: _vm.message },
           on: {
             keyup: function($event) {
@@ -44840,11 +44855,12 @@ var render = function() {
           }
         }),
         _vm._v(" "),
+        _c("div", { staticClass: "col-2" }),
+        _vm._v(" "),
         _c(
           "button",
           {
-            staticClass:
-              "place-self-end bg-gray-500 hover:bg-blue-700 p-1 mt-1 rounded text-white",
+            staticClass: "btn btn-secondary col-4",
             on: {
               click: function($event) {
                 return _vm.sendMessages()
@@ -44935,29 +44951,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.self == true
+    this.self == true
       ? _c("div", [
-          _c("div", { staticStyle: { margin: "5px", "text-align": "left" } }, [
-            _c(
-              "div",
-              {
-                staticStyle: {
-                  width: "30%",
-                  "text-align": "center",
-                  "background-color": "#c4c4c4",
-                  "border-radius": "20px",
-                  color: "black",
-                  "font-weight": "300"
-                }
-              },
-              [_vm._v("\n        " + _vm._s(_vm.message.message) + "\n      ")]
-            )
-          ])
-        ])
-      : _c("div", [
           _c(
             "div",
-            { staticStyle: { margin: "5px 0", "text-align": "right" } },
+            { staticClass: "text-align-left", staticStyle: { margin: "5px" } },
             [
               _c(
                 "div",
@@ -44965,18 +44963,42 @@ var render = function() {
                   staticStyle: {
                     width: "30%",
                     "text-align": "center",
-                    "background-color": "yellow",
-                    "border-radius": "20px"
+                    "background-color": "#c4c4c4",
+                    "border-radius": "20px",
+                    color: "black",
+                    "font-weight": "300"
                   }
                 },
                 [
                   _vm._v(
-                    "\n        " + _vm._s(_vm.message.message) + "\n      "
+                    "\n          " + _vm._s(_vm.message.message) + "\n        "
                   )
                 ]
               )
             ]
           )
+        ])
+      : _c("div", [
+          _c("div", { staticStyle: { margin: "5px 0" } }, [
+            _c(
+              "div",
+              {
+                staticStyle: {
+                  width: "30%",
+                  "text-align": "center",
+                  "background-color": "yellow",
+                  "border-radius": "20px",
+                  "margin-left": "auto",
+                  "margin-right": "0"
+                }
+              },
+              [
+                _vm._v(
+                  "\n          " + _vm._s(_vm.message.message) + "\n        "
+                )
+              ]
+            )
+          ])
         ])
   ])
 }
@@ -45013,7 +45035,6 @@ var render = function() {
           {
             key: index,
             staticClass: "list-group-item",
-            class: { active: _vm.selected == room },
             on: {
               click: function($event) {
                 _vm.selected = room.room
@@ -45052,13 +45073,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "py-12" }, [
-      _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+    _c("div", [
+      _c("div", [
         _c(
           "div",
-          { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
           [
             _c("message-container", {
+              staticStyle: { height: "450px", overflow: "auto" },
               attrs: { cuser: _vm.user, messages: _vm.messages }
             }),
             _vm._v(" "),
@@ -45099,12 +45120,14 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "relative h-10 m-1" }, [
+  return _c("div", [
     _c(
       "div",
       {
-        staticClass: "grid grid-cols-6",
-        staticStyle: { "border-top": "1px solid #e6e6e6" }
+        staticStyle: {
+          "border-top": "1px solid #e6e6e6",
+          "text-align": "center"
+        }
       },
       [
         _c("input", {
@@ -45116,8 +45139,9 @@ var render = function() {
               expression: "message"
             }
           ],
-          staticClass: "col-span-5 outline-none p-1",
-          attrs: { type: "text", placeholder: "Say smth" },
+          staticClass: "form-control col-6",
+          staticStyle: { margin: "5px", width: "98%" },
+          attrs: { type: "text", placeholder: "Introduceti un mesaj" },
           domProps: { value: _vm.message },
           on: {
             keyup: function($event) {
@@ -45141,15 +45165,15 @@ var render = function() {
         _c(
           "button",
           {
-            staticClass:
-              "place-self-end bg-gray-500 hover:bg-blue-700 p-1 mt-1 rounded text-white",
+            staticClass: "btn btn-secondary col-4",
+            staticStyle: { margin: "5px", width: "30%" },
             on: {
               click: function($event) {
                 return _vm.sendMessages()
               }
             }
           },
-          [_vm._v("\nSend\n            ")]
+          [_vm._v("Send")]
         )
       ]
     )
@@ -45233,7 +45257,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.self == true
+    this.self == true
       ? _c("div", [
           _c("div", { staticStyle: { margin: "5px", "text-align": "left" } }, [
             _c(
@@ -45242,13 +45266,17 @@ var render = function() {
                 staticStyle: {
                   width: "30%",
                   "text-align": "center",
-                  "background-color": "#c4c4c4",
+                  "background-color": "#dbdbdb",
                   "border-radius": "20px",
                   color: "black",
                   "font-weight": "300"
                 }
               },
-              [_vm._v("\n        " + _vm._s(_vm.message.message) + "\n      ")]
+              [
+                _vm._v(
+                  "\n          " + _vm._s(_vm.message.message) + "\n        "
+                )
+              ]
             )
           ])
         ])
@@ -45263,13 +45291,16 @@ var render = function() {
                   staticStyle: {
                     width: "30%",
                     "text-align": "center",
-                    "background-color": "yellow",
-                    "border-radius": "20px"
+                    "background-color": "#3D566E",
+                    color: "white",
+                    "border-radius": "20px",
+                    "margin-left": "auto",
+                    "margin-right": "0"
                   }
                 },
                 [
                   _vm._v(
-                    "\n        " + _vm._s(_vm.message.message) + "\n      "
+                    "\n          " + _vm._s(_vm.message.message) + "\n        "
                   )
                 ]
               )

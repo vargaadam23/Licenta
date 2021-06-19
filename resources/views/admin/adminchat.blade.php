@@ -7,7 +7,7 @@
         
         <div class="col-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Chats</div>
+                <h3>Listă de chat-uri active</h3>
                 <div id="app">
                     <admin-chat-container :user="{{Auth::id()}}" />
                 </div>
