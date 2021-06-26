@@ -71,7 +71,9 @@ Route::get('/chat/room',function(){//return room
 Route::get('/chat/messages',[App\Http\Controllers\ChatController::class,'messages']);
 Route::post('/chat/message',[App\Http\Controllers\ChatController::class,'newMessage']);
 
-
+Route::get('/informatii',function(){
+return view('informatii.informatii');
+});
 
 
 

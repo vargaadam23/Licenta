@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\HTTP\Helpers\Documente;
 use Illuminate\Http\Request;
+use App\Mail\DocumentMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+
 
 class ContractVCController extends Controller
 {
@@ -34,7 +38,19 @@ class ContractVCController extends Controller
         
         
         $nume=$document->creeazaContract();
-        return redirect('documente');
+        if(isset($data['trimitere'])){
+            if($data['trimitere']=='email'){
+                if(Auth::check()){
+                    $email=Auth::user()->email;
+                }else{
+                    $email=$data['email'];
+                }
+                Mail::to($email)->send(new DocumentMail($nume));
+                return redirect('documente');
+            }else{
+                return response()->download($nume,'document.pdf',['Content-Type: application/pdf']);
+            }
+        }
     }
 
     /**

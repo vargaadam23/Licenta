@@ -18,8 +18,6 @@
 </head>
 <body>
 
-
-<!-- HEADER =============================-->
 <header class="item header margin-top-0">
 <div class="wrapper">
 	<nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
@@ -35,12 +33,12 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="propClone"><a href="/">Home</a></li>
 				<li class="propClone"><a href="/documente">Documente</a></li>
-				<li class="propClone"><a href="product.html">Informatii</a></li>
-				<li class="propClone"><a href="checkout.html">Asigurare</a></li>
+				<li class="propClone"><a href="/informatii">Informatii</a></li>
+				<li class="propClone"><a href="/chat">Asigurare</a></li>
 				<li style="margin-right:35px" class="propClone"><a href="/feedback">Contact</a></li>
 
 				@if(Auth::check())
-				<li ><a style="font-size: 15px;" href="checkout.html">{{Auth::user()->email}}</a></li>
+				<li ><a style="font-size: 15px;" href="">{{Auth::user()->email}}</a></li>
 				<li ><a style="font-size: 15px;" href="/logout">Logout</a></li>
 				@else
 				<li ><a style="font-size: 15px;" href="/login">Login</a></li>
@@ -53,24 +51,12 @@
 </div>
 </header>
 
-
-<!-- STEPS =============================-->
-
-	
-	
-	<!-- LATEST ITEMS =============================-->
 <div style="padding: 50px;">
 <hr class="my-4">	
 @yield('content')
 </div>
 
 
-
-
-
-
-
-<!-- FOOTER =============================-->
 <div class="footer text-center">
 	<div class="container">
 		<div class="row">
@@ -89,22 +75,9 @@
 	</div>
 </div>
 
-<!-- SCRIPTS =============================-->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/anim.js')}}"></script>
-<script>
-//----HOVER CAPTION---//	  
-jQuery(document).ready(function ($) {
-	$('.fadeshop').hover(
-		function(){
-			$(this).find('.captionshop').fadeIn(150);
-		},
-		function(){
-			$(this).find('.captionshop').fadeOut(150);
-		}
-	);
-});
-</script>
+
 <script src="{{ asset('js/app.js') }}" ></script>	
 </body>
 </html>

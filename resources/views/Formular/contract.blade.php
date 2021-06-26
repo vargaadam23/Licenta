@@ -27,13 +27,9 @@
     });
 </script>
 
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
+
 <div class="dashboard-main-wrapper">
-    <!-- ============================================================== -->
-    <!-- wrapper  -->
-    <!-- ============================================================== -->
+    
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
@@ -89,7 +85,7 @@
 
                         <div class="row">
                             <div class="col-6 col-md-2 form-group">
-                                
+
                                 <label for="country1"> Țară </label>
                                 <!--span style=" color: red! important; display: inline; float: none; "> * </span-->
 
@@ -262,7 +258,7 @@
                                     <option value=" Oman "> Oman </option>
                                     <option value=" Pakistan "> Pakistan </option>
                                     <option value=" Palau "> Palau </option>
-    
+
                                     <option value=" Panama "> Panama </option>
                                     <option value=" Papua Noua Guinee "> Papua Noua Guinee </option>
                                     <option value=" Paraguay "> Paraguay </option>
@@ -342,7 +338,7 @@
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="localitate1">Localitate</label>
-                                <input class="form-control" id="localitate1" name="localitate1" type="text">
+                                <input class="form-control" id="localitate1" required name="localitate1" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="sat1">Sat</label>
@@ -354,7 +350,7 @@
                             </div>
                             <div class="col-3 col-md-1 form-group">
                                 <label for="nr1">Nr</label>
-                                <input class="form-control" id="nr1" name="nr1" type="text">
+                                <input class="form-control" id="nr1" required name="nr1" type="text">
                             </div>
                             <div class="col-3 col-md-1  form-group">
                                 <label for="bl1">Bl</label>
@@ -374,8 +370,9 @@
                             </div>
                             <div class="col-6 col-md-2  form-group">
                                 <label for="jud1">Judet</label>
-                                <input class="form-control" id="jud1" name="jud1" type="text">
+                                <input class="form-control" id="jud1" required name="jud1" type="text">
                             </div>
+                            
                         </div>
 
 
@@ -431,8 +428,8 @@
 
 
                         <div class="row">
-                        <div class="col-6 col-md-2 form-group">
-                                
+                            <div class="col-6 col-md-2 form-group">
+
                                 <label for="country2"> Țară </label>
                                 <!--span style=" color: red! important; display: inline; float: none; "> * </span-->
 
@@ -605,7 +602,7 @@
                                     <option value=" Oman "> Oman </option>
                                     <option value=" Pakistan "> Pakistan </option>
                                     <option value=" Palau "> Palau </option>
-    
+
                                     <option value=" Panama "> Panama </option>
                                     <option value=" Papua Noua Guinee "> Papua Noua Guinee </option>
                                     <option value=" Paraguay "> Paraguay </option>
@@ -685,7 +682,7 @@
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="localitate2">Localitate</label>
-                                <input class="form-control" id="localitate2" name="localitate2" type="text">
+                                <input class="form-control" id="localitate2" required name="localitate2" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="sat2">Sat</label>
@@ -697,7 +694,7 @@
                             </div>
                             <div class="col-3 col-md-1 form-group">
                                 <label for="nr2">Nr</label>
-                                <input class="form-control" id="nr2" name="nr2" type="text">
+                                <input class="form-control" id="nr2" required name="nr2" type="text">
                             </div>
                             <div class="col-3 col-md-1  form-group">
                                 <label for="bl2">Bl</label>
@@ -715,43 +712,33 @@
                                 <label for="ap2">Ap</label>
                                 <input class="form-control" id="ap2" name="ap2" type="text">
                             </div>
-                        
-                        
+
+
                             <div class="col-6 col-md-2  form-group">
                                 <label for="jud2">Judet</label>
-                                <input class="form-control" id="jud2" name="jud2" type="text">
+                                <input class="form-control" id="jud2" required name="jud2" type="text">
                             </div>
                         </div>
 
                         <label style="font-size: 20px;color:black;" for="masinarow">Detalii automobil</label>
                         <div id="masinarow" class=" row">
-                            <div class="col-5 col-md-2  form-group">
-                                <label for="cat">Categoria</label>
-                                <input class="form-control" id="cat" name="cat" type="text">
-                            </div>
-                            <div class="col-7 col-md-2 form-group">
-                                <label for="car">Caroseria</label>
-                                <input class="form-control" id="car" name="car" type="text">
-                            </div>
+                            
                             <div class="col-6 col-md-2 form-group">
                                 <label for="mar">Marca</label>
-                                <input class="form-control" id="mar" name="mar" type="text">
+                                <input class="form-control" id="mar" required name="mar" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="tip">Tip</label>
-                                <input class="form-control" id="tip" name="tip" type="text">
+                                <input class="form-control" id="tip" required name="tip" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="iden">Nr de identificare</label>
-                                <input class="form-control" id="iden" name="iden" type="text">
+                                <input class="form-control" id="iden" required name="iden" type="text">
                             </div>
-                            <div class="col-12 col-md-2 form-group">
-                                <label for="om">Numar de omologare</label>
-                                <input class="form-control" id="om" name="om" type="text">
-                            </div>
+                            
                             <div class="col-6 col-md-1 form-group">
                                 <label for="anfb">An fb.</label>
-                                <input class="form-control" id="anfb" name="anfb" type="text">
+                                <input class="form-control" id="anfb" required name="anfb" type="text">
                             </div>
                             <div class="col-6 col-md-1 form-group">
                                 <label for="seriemoto">Serie motor</label>
@@ -759,59 +746,69 @@
                             </div>
                             <div class="col-6 col-md-1 form-group">
                                 <label for="cil">Cilindree</label>
-                                <input class="form-control" id="cil" name="cil" type="text">
+                                <input class="form-control" id="cil" required name="cil" type="text">
                             </div>
-                            <div class="col-6 col-md-2 form-group">
-                                <label for="sursa">Sursa de energie</label>
-                                <input class="form-control" id="sursa" name="sursa" type="text">
-                            </div>
-                            <div class="col-6 col-md-1 form-group">
-                                <label for="col">Culoare</label>
-                                <input class="form-control" id="col" name="col" type="text">
-                            </div>
+                           
+                           
                             <div class="col-12 col-md-2 form-group">
                                 <label for="civ">Seria si nr CI vehiculului</label>
-                                <input class="form-control" id="civ" name="civ" type="text">
+                                <input class="form-control" id="civ" required name="civ" type="text">
                             </div>
 
                             <div class="col-12 col-md-2 form-group">
                                 <label for="pret">Pret</label>
-                                <input class="form-control" id="pret" name="pret" type="text">
+                                <input class="form-control" id="pret" required name="pret" type="text">
                             </div>
                             <div class="col-12 col-md-1 form-group">
                                 <label for="mon">Moneda</label>
-                                <input class="form-control" id="mon" name="mon" type="text">
+                                <input class="form-control" id="mon" required name="mon" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="data">Data incheierii contractului</label>
-                                <input class="form-control" id="data" name="data" type="date">
+                                <input class="form-control" id="data" required name="data" type="date">
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="locul">Locul incheierii cotractului</label>
                                 <input class="form-control" id="locul" name="locul" type="text">
                             </div>
-
+                            @if(!Auth::check())
+                            <div class="col-6 col-md-2  form-group">
+                                
+                            </div>
+                            <div class="col-6 col-md-2  form-group">
+                                <label for="email1">Email</label>
+                                <input class="form-control" id="email1" required name="email" type="email">
+                            </div>
+                            @endif
                         </div>
 
                         <div style="margin-top: 20px;" class="row">
-                            
+
                             <div class="col-12 col-md-3">
                                 <button style="width:100%;font-size:20px;" type="submit" class="btn btn-primary">Trimite</button>
                             </div>
-                            <div class="col-5">
-
+                            <div class="col-md-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trimitere" value="email" checked id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Prin e-mail
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trimitere" value="descarcare" id="flexRadioDefault2" >
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Prin descaracre
+                                    </label>
+                                </div>
                             </div>
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- end wrapper  -->
-    <!-- ============================================================== -->
+    
 </div>
-<!-- ============================================================== -->
-<!-- end main wrapper  -->
-<!-- ============================================================== -->
+
 @stop

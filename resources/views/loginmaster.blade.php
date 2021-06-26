@@ -19,7 +19,7 @@
 <body>
 
 
-<!-- HEADER =============================-->
+
 <header class="item header margin-top-0">
 <div class="wrapper">
 	<nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
@@ -41,23 +41,12 @@
 </header>
 
 
-<!-- STEPS =============================-->
-
-	
-	
-	<!-- LATEST ITEMS =============================-->
 <div style="padding: 200px;">
 	
 @yield('content')
 </div>
 
 
-
-
-
-
-
-<!-- FOOTER =============================-->
 <div class="footer text-center">
 	<div class="container">
 		<div class="row">
@@ -76,11 +65,10 @@
 	</div>
 </div>
 
-<!-- SCRIPTS =============================-->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/anim.js')}}"></script>
 <script>
-//----HOVER CAPTION---//	  
+  
 jQuery(document).ready(function ($) {
 	$('.fadeshop').hover(
 		function(){

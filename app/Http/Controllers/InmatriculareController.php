@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -8,6 +9,9 @@ use Illuminate\Validation\Rule;
 use App\HTTP\Helpers\Documente;
 use Error;
 use Illuminate\Http\Request;
+use App\Mail\DocumentMail;
+use Illuminate\Support\Facades\Storage;
+
 
 class InmatriculareController extends Controller
 {
@@ -88,27 +92,35 @@ class InmatriculareController extends Controller
     }
     public function genereaza(Request $request)
     {
+
         $data = $request->input();
         $document = new Documente($data);
-        
-        
-        $pdf = new \Jurosh\PDFMerge\PDFMerger;
-        $pdf->addPDF($document->creeazaCerere(1,1), 'all')
-            ->addPDF($document->creeazaFisa(), 'all');
 
-        $nume=storage_path('inmatriculare'.$document->data['nume1'].' '.$document->data['cnp1'].'.pdf');
-       
+
+        $pdf = new \Jurosh\PDFMerge\PDFMerger;
+        $pdf->addPDF($document->creeazaCerere(1, 1), 'all')
+            ->addPDF($document->creeazaFisa(), 'all');
+        if ($data['persoana1'] == 'pf') {
+            $nume = storage_path('doc/inmatriculare' . $document->data['nume1'] . '-' . $document->data['cnp1'] . '.pdf');
+        } else {
+            $nume = storage_path('doc/inmatriculare' . $document->data['numep1'] . '.pdf');
+        }
+
+
         // call merge, output format `file`
-        $pdf->merge('file',$nume );
-       
-            Mail::raw('test', ['nume'=>$nume], function ($message) use ($nume){
-                $message->from('documente@birouauto.ro', 'Test');
-            
-                $message->to(Auth::user()->email);
-                $message->attach($nume);
-            });
-        
-        
-        return redirect('documente');
+        $pdf->merge('file', $nume);
+        if(isset($data['trimitere'])){
+            if($data['trimitere']=='email'){
+                if(Auth::check()){
+                    $email=Auth::user()->email;
+                }else{
+                    $email=$data['email'];
+                }
+                Mail::to($email)->send(new DocumentMail($nume));
+                return redirect('documente');
+            }else{
+                return response()->download($nume,'document.pdf',['Content-Type: application/pdf']);
+            }
+        }
     }
 }

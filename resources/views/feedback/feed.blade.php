@@ -57,6 +57,8 @@
 				echo "Problema nerezolvata";
 			}elseif($mesaj->status==5){
 				echo "Finalizat";
+			}elseif($mesaj->status==0){
+				echo "Mesajul nu a fost văzut";
 			}
 			@endphp)</span>
 			@endforeach

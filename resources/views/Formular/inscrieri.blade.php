@@ -27,13 +27,9 @@
     });
 </script>
 
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
+
 <div class="dashboard-main-wrapper">
-    <!-- ============================================================== -->
-    <!-- wrapper  -->
-    <!-- ============================================================== -->
+   
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
@@ -90,7 +86,7 @@
                         <div class="row">
                             <div class="col-6 col-md-2 form-group">
                                 <label for="localitate1">Localitate</label>
-                                <input class="form-control" id="localitate1" name="localitate1" type="text">
+                                <input class="form-control" id="localitate1" required name="localitate1" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="sat1">Sat</label>
@@ -102,7 +98,7 @@
                             </div>
                             <div class="col-3 col-md-1 form-group">
                                 <label for="nr1">Nr</label>
-                                <input class="form-control" id="nr1" name="nr1" type="text">
+                                <input class="form-control" id="nr1" required name="nr1" type="text">
                             </div>
                             <div class="col-3 col-md-1  form-group">
                                 <label for="bl1">Bl</label>
@@ -122,7 +118,7 @@
                             </div>
                             <div class="col-6 col-md-2  form-group">
                                 <label for="jud1">Județ</label>
-                                <input class="form-control" id="jud1" name="jud1" type="text">
+                                <input class="form-control" id="jud1" required name="jud1" type="text">
                             </div>
                         </div>
 
@@ -130,23 +126,23 @@
                         <div id="masinarow" class=" row">
                             <div class="col-5 col-md-2  form-group">
                                 <label for="cat">Categoria</label>
-                                <input class="form-control" id="cat" name="cat" type="text">
+                                <input class="form-control" id="cat" required name="cat" type="text">
                             </div>
                             <div class="col-7 col-md-2 form-group">
                                 <label for="car">Caroseria</label>
-                                <input class="form-control" id="car" name="car" type="text">
+                                <input class="form-control" id="car" required name="car" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="mar">Marca</label>
-                                <input class="form-control" id="mar" name="mar" type="text">
+                                <input class="form-control" id="mar" required name="mar" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="tip">Tip</label>
-                                <input class="form-control" id="tip" name="tip" type="text">
+                                <input class="form-control" id="tip" required name="tip" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="iden">Nr de identificare</label>
-                                <input class="form-control" id="iden" name="iden" type="text">
+                                <input class="form-control" id="iden" required name="iden" type="text">
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="om">Număr de omologare</label>
@@ -154,16 +150,16 @@
                             </div>
                             <div class="col-6 col-md-1 form-group">
                                 <label for="anfb">An fb.</label>
-                                <input class="form-control" id="anfb" name="anfb" type="text">
+                                <input class="form-control" id="anfb" required name="anfb" type="text">
                             </div>
                             <div class="col-6 col-md-1 form-group">
                                 <label for="seriemoto">Serie motor</label>
-                                <input class="form-control" id="seriemoto" name="seriemoto" type="text">
+                                <input class="form-control" id="seriemoto" required name="seriemoto" type="text">
                             </div>
 
                             <div class="col-6 col-md-1 form-group">
                                 <label for="cil">Cilindree</label>
-                                <input class="form-control" id="cil" name="cil" type="text">
+                                <input class="form-control" id="cil" required name="cil" type="text">
                             </div>
                             <div class="col-6 col-md-2 form-group">
                                 <label for="sursa">Sursa de energie</label>
@@ -175,19 +171,39 @@
                             </div>
                             <div class="col-12 col-md-2 form-group">
                                 <label for="civ">Seria și nr CI vehiculului</label>
-                                <input class="form-control" id="civ" name="civ" type="text">
+                                <input class="form-control" id="civ" required name="civ" type="text">
                             </div>
+                            @if(!Auth::check())
+                            <div class="col-6 col-md-2  form-group">
+
+                            </div>
+                            <div class="col-6 col-md-2  form-group">
+                                <label for="email1">Email</label>
+                                <input class="form-control" id="email1" required name="email" type="text">
+                            </div>
+                            @endif
                         </div>
 
                         <div style="margin-top: 20px;" class="row">
                             <div class="col-12 col-md-4">
-                                
+
                             </div>
                             <div class="col-12 col-md-3">
                                 <button style="width:100%;font-size:20px;" type="submit" class="btn btn-primary">Trimite</button>
                             </div>
                             <div class="col-5">
-
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trimitere" value="email" checked id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Prin e-mail
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trimitere" value="descarcare" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Prin descaracre
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -195,11 +211,7 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- end wrapper  -->
-    <!-- ============================================================== -->
+    
 </div>
-<!-- ============================================================== -->
-<!-- end main wrapper  -->
-<!-- ============================================================== -->
+
 @stop
